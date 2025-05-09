@@ -4,6 +4,29 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the Exercise3 Project.");
+        Random randomGenerator = new Random();
+        int number = randomGenerator.Next(1, 101);
+        Console.WriteLine("What is the magic number?");
+
+        int response;
+        do
+        {
+            Console.Write("What is your guess? ");
+            string userInput = Console.ReadLine();
+            response = int.Parse(userInput);
+
+            if (number < response)
+            {
+                Console.WriteLine("Lower");
+            }
+
+            else if (number > response)
+            {
+                Console.WriteLine("Higher");
+            }
+
+        } while (response != number);
+
+        Console.WriteLine("You guessed it!");
     }
 }
